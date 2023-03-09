@@ -1,1 +1,101 @@
-<h1> Hello </h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Topic with Solution and Screenshots</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        text-align: center;
+        margin-top: 0;
+      }
+      h2 {
+        font-size: 1.5em;
+        margin-top: 20px;
+      }
+      p {
+        margin-top: 10px;
+        font-size: 1.2em;
+      }
+      img {
+        max-width: 100%;
+        margin-top: 10px;
+      }
+      .logo {
+        width: 100px; /* Adjust as needed */
+        height: 100px; /* Adjust as needed */
+        position: absolute;
+        top: 10px; /* Adjust as needed */
+        left: 10px; /* Adjust as needed */
+      }
+      .header {
+        position: relative;
+        height: 100px; /* Adjust as needed */
+        background-color: #f2f2f2;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h1 {
+        margin: 0;
+        padding: 0;
+        font-size: 24px; /* Adjust as needed */
+      }
+      .highlight {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+        <!--<img src="logo.png" alt="Logo" class="logo">-->
+        <h1>Cloud with DevOps</h1>
+    </div>
+    <div>
+        <table align="center">
+            <tr>
+              <td><a href="index.html">Home</a></td>
+              <td>&nbsp;&nbsp;&nbsp;</td>
+              <td><a href="About/about.html">About</a></td>
+              <td>&nbsp;&nbsp;&nbsp;</td>
+              <td><a href="Services/services.html">Services</a></td>
+              <td>&nbsp;&nbsp;&nbsp;</td>
+              <td><a href="Contact/contact.html">Contact</a></td>
+              <td>&nbsp;&nbsp;&nbsp;</td>
+              <td><a href="Login-Register/user.html">Login/Register</a></td>
+              <td>&nbsp;&nbsp;&nbsp;</td>
+              <!-- <td><a href="#blog">Search</a></td> -->
+            </tr>
+          </table>
+    </div>
+    <div class="container">
+      
+      
+      <h2>Multi-Stage Dockerfile that builds a Node.js application and deploy artifacts in Apache httpd server</h2>
+      <img src="example.webp" alt="Screenshot 1" />
+      <p>
+        In this Dockerfile, there are two stages. The first stage uses the node:latest image to build a Node.js application.
+        It sets the working directory to /app, copies the package*.json files, installs dependencies,
+        copies the application code, and runs the build command. The build artifacts are saved in the dist/ directory.
+      </p>
+      <p>
+        The second stage uses the httpd:latest image to build an Apache httpd server. It copies the dist/ directory from the first stage to the Apache server's default document root at /usr/local/apache2/htdocs/.
+      </p>
+      <p>
+        By using a multi-stage build, the final image only includes the Apache server and the built application artifacts, without including any unnecessary build dependencies or intermediate artifacts from the Node.js build stage. This helps to reduce the size of the final Docker image.
+      </p>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
